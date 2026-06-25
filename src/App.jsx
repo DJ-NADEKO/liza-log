@@ -312,7 +312,7 @@ export default function App() {
     });
     rows.push([]);
     rows.push(["合計", totalStock, totalCount, Math.round(totalProfit)]);
-    downloadCSV("せどりサマリー.csv", rows);
+    downloadCSV("summary.csv", rows);
   };
 
   const exportFullBackup = async () => {
@@ -346,7 +346,7 @@ export default function App() {
       );
     });
     const csv = Papa.unparse({ fields: BACKUP_FIELDS, data: rows });
-    downloadText("sedori_backup.csv", csv);
+    downloadText("all_backup.csv", csv);
     setBackupMessage("ダウンロードが完了しました!");
     setBackupBusy(false);
   };
@@ -461,7 +461,7 @@ export default function App() {
         <div className="max-w-4xl mx-auto flex items-center justify-between gap-2">
           <div className="flex items-center gap-2">
             <Package className="w-6 h-6" />
-            <h1 className="text-lg sm:text-xl font-extrabold tracking-tight">せどり管理ツール</h1>
+            <h1 className="text-lg sm:text-xl font-extrabold tracking-tight">りざログ</h1>
           </div>
           <div className="flex items-center gap-2">
             <div className="flex gap-1 bg-white/20 rounded-full p-1">
