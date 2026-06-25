@@ -489,7 +489,7 @@ export default function App() {
               title="使い方"
                 className="px-3 py-2 rounded-full bg-white/20 hover:bg-white/30 text-sm font-bold transition-colors"
   > 
-    ❓
+    使用方法
   </button>
             <button
               onClick={() => {
@@ -531,12 +531,12 @@ export default function App() {
       <div className="mt-5 bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800">
         <strong>⚠️ ご注意</strong>
         <br /><br />
-        このアプリのデータはブラウザ内に保存されます。
-        ブラウザデータの削除やブラウザ・端末変更時にはデータが失われる可能性があります。
-        定期的なバックアップをおすすめします。
+        このアプリのデータはブラウザ内に保存されます。<br>
+        ブラウザデータの削除やブラウザ・端末変更時にはデータが失われる可能性があります。<br>
+        定期的なバックアップをおすすめします。<p>
 
-        バックアップ方法
-        画面右上の歯車ボタンから全データのエクスポート・インポートが行えます。
+        バックアップ方法<br>
+        画面右上の歯車ボタンから全データのエクスポート・インポートが行えます。<br>
       </div>
     </div>
   </div>
