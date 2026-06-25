@@ -585,7 +585,7 @@ export default function App() {
                   value={newProjectName}
                   onChange={(e) => setNewProjectName(e.target.value)}
                   onKeyDown={(e) => e.key === "Enter" && addProject()}
-                  placeholder="商材名を入力 (例: ワイヤレスイヤホン A社製)"
+                  placeholder="アイテム名を入力 (例: ワイヤレスイヤホン A社製)"
                   className="flex-1 border-2 border-fuchsia-200 rounded-xl px-4 py-2 outline-none focus:border-fuchsia-400 text-sm"
                 />
                 <button onClick={addProject} className="bg-fuchsia-500 hover:bg-fuchsia-600 text-white font-bold px-5 py-2 rounded-xl text-sm">
