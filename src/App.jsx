@@ -100,6 +100,7 @@ export default function App() {
   const [sQty, setSQty] = useState("1");
   const [sFeeType, setSFeeType] = useState("yen"); // yen | percent
   const [sFeeValue, setSFeeValue] = useState("");
+  const [showHelp, setShowHelp] = useState(false); //注意文言 
 
   useEffect(() => {
     (async () => {
@@ -482,6 +483,14 @@ export default function App() {
                 サマリー
               </button>
             </div>
+              {/* 使い方ボタン */}
+              <button
+              onClick={() => setShowHelp(true)}
+              title="使い方"
+                className="px-3 py-2 rounded-full bg-white/20 hover:bg-white/30 text-sm font-bold transition-colors"
+  > 
+    ❓
+  </button>
             <button
               onClick={() => {
                 setBackupMessage("");
@@ -496,7 +505,42 @@ export default function App() {
           </div>
         </div>
       </div>
+{/* Help Modal */}
+{showHelp && (
+  <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4">
+    <div className="bg-white rounded-2xl shadow-2xl max-w-lg w-full p-6 relative">
 
+      <button
+        onClick={() => setShowHelp(false)}
+        className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+      >
+        <X className="w-5 h-5" />
+      </button>
+
+      <h3 className="text-lg font-extrabold text-gray-700 mb-4">
+        使い方
+      </h3>
+
+      <ol className="space-y-3 text-sm text-gray-600">
+        <li><strong>① プロジェクトを作成</strong><br />管理したい商品ごとにプロジェクトを作成します。</li>
+        <li><strong>② 調査価格を記録</strong><br />相場価格を記録できます。</li>
+        <li><strong>③ 仕入れを登録</strong><br />購入した商品を在庫として登録します。</li>
+        <li><strong>④ 取引を登録</strong><br />販売後に利益を自動計算します。</li>
+      </ol>
+
+      <div className="mt-5 bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800">
+        <strong>⚠️ ご注意</strong>
+        <br /><br />
+        このアプリのデータはブラウザ内に保存されます。
+        ブラウザデータの削除やブラウザ・端末変更時にはデータが失われる可能性があります。
+        定期的なバックアップをおすすめします。
+
+        バックアップ方法
+        画面右上の歯車ボタンから全データのエクスポート・インポートが行えます。
+      </div>
+    </div>
+  </div>
+)}
       {/* Settings / Backup Modal */}
       {showSettings && (
         <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4">
