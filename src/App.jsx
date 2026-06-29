@@ -465,32 +465,37 @@ export default function App() {
             <h1 className="text-lg sm:text-xl font-extrabold tracking-tight">りざログ</h1>
           </div>
           <div className="flex items-center gap-2">
-            <div className="flex gap-1 bg-white/20 rounded-full p-1">
-              <button
-                onClick={() => setView("projects")}
-                className={`px-3 sm:px-4 py-1.5 rounded-full text-sm font-bold transition-all ${
-                  view !== "summary" ? "bg-white text-fuchsia-600 shadow" : "text-white"
-                }`}
-              >
-                プロジェクト
-              </button>
-              <button
-                onClick={openSummary}
-                className={`px-3 sm:px-4 py-1.5 rounded-full text-sm font-bold transition-all ${
-                  view === "summary" ? "bg-white text-fuchsia-600 shadow" : "text-white"
-                }`}
-              >
-                サマリー
-              </button>
-            </div>
-              {/* 使い方ボタン */}
-              <button
-              onClick={() => setShowHelp(true)}
-              title="使い方"
-                className="px-3 py-2 rounded-full bg-white/20 hover:bg-white/30 text-sm font-bold transition-colors"
-  > 
-    使用方法
+<div className="flex gap-1 bg-white/20 rounded-full p-1">
+  <button
+    onClick={() => setView("projects")}
+    className={`px-2 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold transition-all whitespace-nowrap ${
+      view !== "summary"
+        ? "bg-white text-fuchsia-600 shadow"
+        : "text-white"
+    }`}
+  >
+    プロジェクト
   </button>
+
+  <button
+    onClick={openSummary}
+    className={`px-2 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold transition-all whitespace-nowrap ${
+      view === "summary"
+        ? "bg-white text-fuchsia-600 shadow"
+        : "text-white"
+    }`}
+  >
+    サマリー
+  </button>
+</div>
+
+<button
+  onClick={() => setShowHelp(true)}
+  title="使い方"
+  className="px-2 sm:px-3 py-2 rounded-full bg-white/20 hover:bg-white/30 text-xs sm:text-sm font-bold transition-colors whitespace-nowrap"
+>
+  使い方
+</button>
             <button
               onClick={() => {
                 setBackupMessage("");
